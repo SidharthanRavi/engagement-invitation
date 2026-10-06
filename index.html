@@ -157,7 +157,98 @@
     <div class="kolam-border" aria-hidden="true"></div>
   </section>
 
-  <!-- 2 · STORY -->
+  <!-- 2 · SAVE THE DATE -->
+  <section class="scene date-scene" id="date" data-scene aria-labelledby="dateTitle">
+    <div class="layer" data-depth=".15">
+      <div class="bleed sky-maroon"></div>
+      <div class="sparkles" data-sparkles="26"></div>
+    </div>
+    <div class="layer" data-depth=".45"><div class="kolam-big" aria-hidden="true"></div></div>
+    <div class="layer" data-depth="1.3"><div class="garland-wrap" data-garland="jasmine" aria-hidden="true"></div></div>
+    <div class="container center">
+      <h2 id="dateTitle" class="sec-title light reveal">Save the Date</h2>
+      <div class="calendar reveal" id="calendar">
+        <div class="cal-rings" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+        <div class="cal-top"><span data-bind="monthYear"></span></div>
+        <div class="cal-body">
+          <div class="cal-day" data-bind="dayNum"></div>
+          <div class="cal-wd" data-bind="weekday"></div>
+          <div class="cal-grid" id="calGrid" role="img" aria-label="Calendar month view with the engagement date highlighted"></div>
+        </div>
+        <div class="cal-leaf" id="calLeaf" aria-hidden="true">
+          <div class="leaf-front"><span>Save<br>the date</span><i>♥</i></div>
+          <div class="leaf-back"></div>
+        </div>
+      </div>
+      <p class="lead light reveal">Counting down to our big day</p>
+      <div class="countdown reveal" id="countdown" role="timer" aria-label="Countdown to the engagement">
+        <div class="cd"><b id="cdD">00</b><span>Days</span></div>
+        <div class="cd"><b id="cdH">00</b><span>Hours</span></div>
+        <div class="cd"><b id="cdM">00</b><span>Minutes</span></div>
+        <div class="cd"><b id="cdS">00</b><span>Seconds</span></div>
+      </div>
+      <p class="cd-done" id="cdDone" hidden></p>
+    </div>
+  </section>
+
+  <!-- 3 · VENUE -->
+  <section class="scene venue-scene" id="venue" data-scene aria-labelledby="venueTitle">
+    <div class="layer" data-depth=".12"><div class="bleed sky-ticket"></div></div>
+    <div class="layer" data-depth=".4" id="doodles" aria-hidden="true">
+      <svg class="doodle d1" viewBox="0 0 100 80"><use href="#sym-burger"/></svg>
+      <svg class="doodle d2" viewBox="0 0 80 100"><use href="#sym-fries"/></svg>
+      <svg class="doodle d3" viewBox="0 0 80 100"><use href="#sym-fries"/></svg>
+      <svg class="doodle d4" viewBox="0 0 100 80"><use href="#sym-burger"/></svg>
+      <svg class="doodle d5" viewBox="0 0 80 100"><use href="#sym-fries"/></svg>
+    </div>
+    <div class="container center">
+      <h2 id="venueTitle" class="sec-title reveal">Your Boarding Pass</h2>
+      <p class="lead reveal">Tap the stub to tear it off ✂️</p>
+
+      <article class="pass reveal" id="pass" aria-label="Boarding pass for the engagement">
+        <div class="pass-main">
+          <header class="pass-head"><svg viewBox="0 0 120 50" width="30" height="13" aria-hidden="true"><use href="#sym-plane"/></svg><span>Engagement Airlines · Boarding Pass</span></header>
+          <div class="route">
+            <div><small>From</small><b data-bind="flight.from"></b></div>
+            <div class="route-icon" aria-hidden="true"><i></i><svg viewBox="0 0 120 50" width="38" height="16"><use href="#sym-plane"/></svg><i></i></div>
+            <div class="r"><small>To</small><b data-bind="flight.to"></b></div>
+          </div>
+          <dl class="pass-grid">
+            <div><dt>Flight</dt><dd data-bind="flight.number"></dd></div>
+            <div><dt>Date</dt><dd data-bind="dateShort"></dd></div>
+            <div class="wide"><dt>Departure Time</dt><dd data-bind="flight.departure"></dd></div>
+            <div class="wide"><dt>Gate</dt><dd><span data-bind="venue.name"></span>, <span data-bind="venue.cityShort"></span></dd></div>
+            <div><dt>Seat</dt><dd data-bind="flight.seat"></dd></div>
+            <div><dt>Class</dt><dd data-bind="eventName"></dd></div>
+            <div class="wide"><dt>Passengers</dt><dd><span data-bind="groom.full"></span> &amp; <span data-bind="bride.full"></span></dd></div>
+          </dl>
+        </div>
+        <button class="pass-stub" id="stub" type="button" aria-label="Tear off the boarding pass stub">
+          <span class="tear">✂ tear here</span>
+          <svg class="barcode" id="barcode" viewBox="0 0 160 46" preserveAspectRatio="none" aria-hidden="true"></svg>
+          <span class="stub-no" data-bind="flight.number"></span>
+        </button>
+      </article>
+
+      <div class="flight reveal" aria-hidden="true">
+        <svg viewBox="0 0 360 220" id="flightSvg">
+          <path id="flightPath" d="M24 188C100 196 70 70 160 96S250 176 310 62" fill="none" stroke="#8c1a33" stroke-opacity=".55" stroke-width="3" stroke-dasharray="1 9" stroke-linecap="round"/>
+          <circle cx="24" cy="188" r="7" fill="#f4b81c" stroke="#8c1a33" stroke-width="2"/>
+          <g class="pin-g"><svg x="292" y="18" width="36" height="50" viewBox="0 0 40 56"><use href="#sym-pin"/></svg></g>
+          <g id="flightPlane"><svg x="-22" y="-9" width="44" height="18" viewBox="0 0 120 50"><use href="#sym-plane"/></svg></g>
+        </svg>
+      </div>
+
+      <div class="actions reveal">
+        <a id="navBtn" class="btn btn-primary" href="#" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 11 18-8-8 18-2-8z"/></svg>Navigate to Gate</a>
+        <a id="shareBtn" class="btn btn-green" href="#" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm5.2 14c-.2.6-1.300 1.200-1.800 1.200-.5.100-1 .2-3.200-.7-2.700-1.100-4.400-3.900-4.500-4.100-.1-.2-1.100-1.500-1.100-2.800s.7-2 .9-2.200c.2-.3.500-.3.700-.3h.5c.2 0 .4 0 .6.500l.8 2c.1.200.1.400 0 .5l-.4.600c-.1.200-.3.300-.1.600.2.300.8 1.300 1.700 2.100 1.200 1 2.200 1.400 2.500 1.500.3.100.4.100.6-.1l.8-1c.2-.3.400-.2.600-.1l1.900.9c.3.100.5.200.5.300.100.100.100.600-.1 1.200Z"/></svg>Share on WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 · STORY -->
   <section class="story" id="story" aria-labelledby="storyTitle">
     <div class="story-track">
       <div class="story-pin">
@@ -221,97 +312,6 @@
           <div class="caption-card" id="captionCard" aria-live="polite"><p id="caption"></p></div>
           <div class="story-progress" aria-hidden="true"><i id="storyBar"></i></div>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 3 · SAVE THE DATE -->
-  <section class="scene date-scene" id="date" data-scene aria-labelledby="dateTitle">
-    <div class="layer" data-depth=".15">
-      <div class="bleed sky-maroon"></div>
-      <div class="sparkles" data-sparkles="26"></div>
-    </div>
-    <div class="layer" data-depth=".45"><div class="kolam-big" aria-hidden="true"></div></div>
-    <div class="layer" data-depth="1.3"><div class="garland-wrap" data-garland="jasmine" aria-hidden="true"></div></div>
-    <div class="container center">
-      <h2 id="dateTitle" class="sec-title light reveal">Save the Date</h2>
-      <div class="calendar reveal" id="calendar">
-        <div class="cal-rings" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
-        <div class="cal-top"><span data-bind="monthYear"></span></div>
-        <div class="cal-body">
-          <div class="cal-day" data-bind="dayNum"></div>
-          <div class="cal-wd" data-bind="weekday"></div>
-          <div class="cal-grid" id="calGrid" role="img" aria-label="Calendar month view with the engagement date highlighted"></div>
-        </div>
-        <div class="cal-leaf" id="calLeaf" aria-hidden="true">
-          <div class="leaf-front"><span>Save<br>the date</span><i>♥</i></div>
-          <div class="leaf-back"></div>
-        </div>
-      </div>
-      <p class="lead light reveal">Counting down to our big day</p>
-      <div class="countdown reveal" id="countdown" role="timer" aria-label="Countdown to the engagement">
-        <div class="cd"><b id="cdD">00</b><span>Days</span></div>
-        <div class="cd"><b id="cdH">00</b><span>Hours</span></div>
-        <div class="cd"><b id="cdM">00</b><span>Minutes</span></div>
-        <div class="cd"><b id="cdS">00</b><span>Seconds</span></div>
-      </div>
-      <p class="cd-done" id="cdDone" hidden></p>
-    </div>
-  </section>
-
-  <!-- 4 · VENUE -->
-  <section class="scene venue-scene" id="venue" data-scene aria-labelledby="venueTitle">
-    <div class="layer" data-depth=".12"><div class="bleed sky-ticket"></div></div>
-    <div class="layer" data-depth=".4" id="doodles" aria-hidden="true">
-      <svg class="doodle d1" viewBox="0 0 100 80"><use href="#sym-burger"/></svg>
-      <svg class="doodle d2" viewBox="0 0 80 100"><use href="#sym-fries"/></svg>
-      <svg class="doodle d3" viewBox="0 0 80 100"><use href="#sym-fries"/></svg>
-      <svg class="doodle d4" viewBox="0 0 100 80"><use href="#sym-burger"/></svg>
-      <svg class="doodle d5" viewBox="0 0 80 100"><use href="#sym-fries"/></svg>
-    </div>
-    <div class="container center">
-      <h2 id="venueTitle" class="sec-title reveal">Your Boarding Pass</h2>
-      <p class="lead reveal">Tap the stub to tear it off ✂️</p>
-
-      <article class="pass reveal" id="pass" aria-label="Boarding pass for the engagement">
-        <div class="pass-main">
-          <header class="pass-head"><svg viewBox="0 0 120 50" width="30" height="13" aria-hidden="true"><use href="#sym-plane"/></svg><span>Engagement Airlines · Boarding Pass</span></header>
-          <div class="route">
-            <div><small>From</small><b data-bind="flight.from"></b></div>
-            <div class="route-icon" aria-hidden="true"><i></i><svg viewBox="0 0 120 50" width="38" height="16"><use href="#sym-plane"/></svg><i></i></div>
-            <div class="r"><small>To</small><b data-bind="flight.to"></b></div>
-          </div>
-          <dl class="pass-grid">
-            <div><dt>Flight</dt><dd data-bind="flight.number"></dd></div>
-            <div><dt>Date</dt><dd data-bind="dateShort"></dd></div>
-            <div class="wide"><dt>Departure Time</dt><dd data-bind="flight.departure"></dd></div>
-            <div class="wide"><dt>Gate</dt><dd><span data-bind="venue.name"></span>, <span data-bind="venue.cityShort"></span></dd></div>
-            <div><dt>Seat</dt><dd data-bind="flight.seat"></dd></div>
-            <div><dt>Class</dt><dd data-bind="eventName"></dd></div>
-            <div class="wide"><dt>Passengers</dt><dd><span data-bind="groom.full"></span> &amp; <span data-bind="bride.full"></span></dd></div>
-          </dl>
-        </div>
-        <button class="pass-stub" id="stub" type="button" aria-label="Tear off the boarding pass stub">
-          <span class="tear">✂ tear here</span>
-          <svg class="barcode" id="barcode" viewBox="0 0 160 46" preserveAspectRatio="none" aria-hidden="true"></svg>
-          <span class="stub-no" data-bind="flight.number"></span>
-        </button>
-      </article>
-
-      <div class="flight reveal" aria-hidden="true">
-        <svg viewBox="0 0 360 220" id="flightSvg">
-          <path id="flightPath" d="M24 188C100 196 70 70 160 96S250 176 310 62" fill="none" stroke="#8c1a33" stroke-opacity=".55" stroke-width="3" stroke-dasharray="1 9" stroke-linecap="round"/>
-          <circle cx="24" cy="188" r="7" fill="#f4b81c" stroke="#8c1a33" stroke-width="2"/>
-          <g class="pin-g"><svg x="292" y="18" width="36" height="50" viewBox="0 0 40 56"><use href="#sym-pin"/></svg></g>
-          <g id="flightPlane"><svg x="-22" y="-9" width="44" height="18" viewBox="0 0 120 50"><use href="#sym-plane"/></svg></g>
-        </svg>
-      </div>
-
-      <div class="actions reveal">
-        <a id="navBtn" class="btn btn-primary" href="#" target="_blank" rel="noopener noreferrer">
-          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 11 18-8-8 18-2-8z"/></svg>Navigate to Gate</a>
-        <a id="shareBtn" class="btn btn-green" href="#" target="_blank" rel="noopener noreferrer">
-          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm5.2 14c-.2.6-1.300 1.200-1.800 1.200-.5.100-1 .2-3.200-.7-2.700-1.100-4.400-3.900-4.500-4.100-.1-.2-1.100-1.500-1.100-2.800s.7-2 .9-2.200c.2-.3.500-.3.700-.3h.5c.2 0 .4 0 .6.500l.8 2c.1.200.1.400 0 .5l-.4.600c-.1.200-.3.300-.1.600.2.300.8 1.300 1.700 2.100 1.200 1 2.200 1.400 2.500 1.500.3.100.4.100.6-.1l.8-1c.2-.3.400-.2.600-.1l1.900.9c.3.100.5.200.5.300.100.100.100.600-.1 1.200Z"/></svg>Share on WhatsApp</a>
       </div>
     </div>
   </section>
