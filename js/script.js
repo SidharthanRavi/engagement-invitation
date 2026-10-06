@@ -10,7 +10,7 @@ const CONFIG = {
 
   // Date as YYYY-MM-DD. Leave `time` empty ("") for an all-day event, or use "HH:MM" (24h).
   date: "2026-11-29",
-  time: "11:00",
+  time: "",
   tzOffset: "+05:30",          // India Standard Time
   durationHours: 3,            // used only when `time` is set
 
@@ -23,7 +23,8 @@ const CONFIG = {
 
   hero: {
     eyebrow: "Together with our families",
-    tagline: "We're getting engaged"
+    tagline: "We're getting engaged",
+    note: "Followed by lunch"
   },
 
   story: {
@@ -46,7 +47,7 @@ const CONFIG = {
 
   // WhatsApp number for RSVPs, digits only with country code (e.g. "919876543210").
   // Leave "" to let the guest choose a contact in WhatsApp.
-  whatsappNumber: "919741193510",
+  whatsappNumber: "",
 
   // Wishes shown when nobody has left one yet on this device.
   sampleWishes: [
